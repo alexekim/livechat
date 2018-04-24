@@ -1,36 +1,32 @@
 <style media="screen">
-  .chat {
+  #chat {
     display: none;
     position: fixed;
     border-radius: 10px 10px 0 0;
     bottom: 0px;
     right: 1%;
-    transition: background 0.2s ease;
-    background: rgba(0,112,205,0.7);
+    background: #3a75c4;
     z-index: 1000201;
   }
 
-  .chat:hover{
-    background: rgba(0,112,205,1);
-  }
-
-  .chatPTag{
-    font-size: 16px !important;
-    margin: 0 !important;
-    padding: 5px 10px 5px 10px;
-  }
   #liveagent_button_online_573410000008mNc {
     color: #fff;
   }
 
   #liveagent_button_offline_573410000008mNc {
-    color: #a3a9ac;
-  }
-  #liveagent_button_offline_573410000008mNc{
+    display: none !important;
+    color: transparent;
     cursor: pointer;
   }
+
+  #chatPTag{
+    font-size: 13px !important;
+    margin: 0 !important;
+    padding: 4px 9px 4px 9px;
+  }
+
   @media (max-width: 567px){
-    .chatPTag{
+    #chatPTag{
       font-size: 12px !important;
       margin: 0 !important;
       padding: 2px 10px 2px 10px;
@@ -38,15 +34,15 @@
   }
 </style>
 
-<div class="chat">
+<div id="chat">
   <div id="liveagent_button_online_573410000008mNc" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNc')">
-    <p class="chatPTag">
+    <p id="chatPTag">
       Live Chat <i class="fa fa-comments"></i>
     </p>
   </div>
   <div id="liveagent_button_offline_573410000008mNc" style="display: none !important; border: 0px none;">
-    <!--<p class="chatPTag" onclick="$('.chat').hide();">
-      Live Chat Offline <i class="fa fa-window-close"></i>
+    <!--<p id="chatPTag" onclick="$('.chat').hide();">
+      Live Chat Offline <i idf="fa fa-window-close"></i>
     </p>-->
   </div>
 </div>
