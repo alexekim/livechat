@@ -1,0 +1,164 @@
+<style media="screen">
+  #chatIntake {
+    position: fixed;
+    border-radius: 10px 10px 0 0;
+    bottom: 0px;
+    right: 1%;
+    background: #3a75c4;
+    z-index: 1000201;
+  }
+
+  #chatIntake2 {
+    position: fixed;
+    border-radius: 10px 10px 0 0;
+    bottom: 0px;
+    right: 36%;
+    background: #ed1b2d;
+    z-index: 1000201;
+  }
+
+  #chatIntake3 {
+    position: fixed;
+    border-radius: 10px 10px 0 0;
+    bottom: 0px;
+    left: 1%;
+    background: #7fba00;
+    z-index: 1000201;
+  }
+
+  #liveagent_button_online_573410000008mNc {
+    color: #fff;
+  }
+
+  #liveagent_button_offline_573410000008mNc {
+    display: none !important;
+    color: transparent;
+    cursor: pointer;
+  }
+
+
+    #liveagent_button_online_573410000008mNm {
+      color: #fff;
+    }
+
+    #liveagent_button_offline_573410000008mNm {
+      display: none !important;
+      color: transparent;
+      cursor: pointer;
+    }
+
+    #liveagent_button_online_573410000008mNh {
+      color: #fff;
+    }
+
+    #liveagent_button_offline_573410000008mNh {
+      display: none !important;
+      color: transparent;
+      cursor: pointer;
+    }
+
+  .chatPTag{
+    font-size: 13px !important;
+    margin: 0 !important;
+    padding: 4px 9px 4px 9px;
+  }
+
+  @media (max-width: 567px){
+    .chatPTag{
+      font-size: 12px !important;
+      margin: 0 !important;
+      padding: 2px 10px 2px 10px;
+    }
+  }
+</style>
+
+<t:set id="chat_type" value="'0'" />
+<t:if test="issue_topic != null">
+  <t:list id="issue_topic">
+    <t:if test="toLowerCase(name) == 'lung-health-and-diseases'">
+      <t:set id="chat_type" value="'1'" />
+    </t:if>
+    <t:else>
+      <t:if test="toLowerCase(name) == 'tobacco'">
+        <t:set id="chat_type" value="'2'" />
+      </t:if>
+      <t:else>
+        <t:set id="chat_type" value="'0'" />
+      </t:else>
+    </t:else>
+  </t:list>
+</t:if>
+<t:else>
+  <t:set id="chat_type" value="'0'" />
+</t:else>
+<t:if test="chat_type == '1'">
+  <apex:page>
+    <div id="chatIntake">
+      <div id="liveagent_button_online_573410000008mNc" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNc')">
+        <p class="chatPTag">
+          Live Chat <i class="fa fa-comments"></i>
+        </p>
+      </div>
+      <div id="liveagent_button_offline_573410000008mNc" style="display: none !important; border: 0px none;">
+      </div>
+    </div>
+    <script type="text/javascript">
+      if (!window._laq) {
+        window._laq = [];
+      }
+      window._laq.push(function() {
+        liveagent.showWhenOnline('573410000008mNc', document.getElementById('liveagent_button_online_573410000008mNc'));
+        liveagent.showWhenOffline('573410000008mNc', document.getElementById('liveagent_button_offline_573410000008mNc'));
+      });
+    </script>
+  </apex:page>
+</t:if>
+<t:else>
+  <t:if test="chat_type == '2'">
+    <apex:page>
+      <div id="chatIntake2">
+        <div id="liveagent_button_online_573410000008mNm" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNm')">
+          <p class="chatPTag">
+            Live Chat <i class="fa fa-comments"></i>
+          </p>
+        </div>
+        <div id="liveagent_button_offline_573410000008mNm" style="display: none !important; border: 0px none;">
+        </div>
+      </div>
+      <script type="text/javascript">
+        if (!window._laq) {
+          window._laq = [];
+        }
+        window._laq.push(function() {
+          liveagent.showWhenOnline('573410000008mNm', document.getElementById('liveagent_button_online_573410000008mNm'));
+          liveagent.showWhenOffline('573410000008mNm', document.getElementById('liveagent_button_offline_573410000008mNm'));
+        });
+      </script>
+    </apex:page>
+  </t:if>
+  <t:else>
+    <t:if test="chat_type == '0'">
+      <apex:page>
+        <!-- Medical Chat Button: -->
+        <div id="chatIntake3">
+          <div id="liveagent_button_online_573410000008mNh" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNh')">
+            <p class="chatPTag">
+              Live Chat <i class="fa fa-comments"></i>
+            </p>
+          </div>
+          <div id="liveagent_button_offline_573410000008mNh" style="display: none !important; border: 0px none;">
+          </div>
+        </div>
+        <script type="text/javascript">
+          if (!window._laq) {
+            window._laq = [];
+          }
+          window._laq.push(function() {
+            liveagent.showWhenOnline('573410000008mNh', document.getElementById('liveagent_button_online_573410000008mNh'));
+            liveagent.showWhenOffline('573410000008mNh', document.getElementById('liveagent_button_offline_573410000008mNh'));
+          });
+        </script>
+      </apex:page>
+    </t:if>
+  </t:else>
+</t:else>
