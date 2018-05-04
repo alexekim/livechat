@@ -1,10 +1,22 @@
+<p>
+  <a href="/preview!www.lung.org/dev/reading-position-indicator/livechat/livechat-original.html">original</a><br>
+  <a href="/preview!www.lung.org/dev/reading-position-indicator/livechat/livechat-1.html">test</a><br>
+  <a href="/preview!www.lung.org/dev/reading-position-indicator/livechat/livechat-all.html">show all with no conditionals</a>
+  <br><br><br>
+  <a href="/preview!www.lung.org/dev/reading-position-indicator/livechat/livechat-blank.html">blank/no issue topic test with conditionals</a><br>
+  <a href="/preview!www.lung.org/dev/reading-position-indicator/livechat/livechat-lunghealth.html">lunghealth with conditionals</a><br>
+  <a href="/preview!www.lung.org/dev/reading-position-indicator/livechat/livechat-tobacco.html">tobacco with conditionals</a><br>
+</p>
+
 <style media="screen">
   #chatIntake {
     position: fixed;
     border-radius: 10px 10px 0 0;
     bottom: 0px;
     right: 1%;
-    background: #3a75c4;
+    transition: background 0.5s;
+    transition: width, 0.5s;
+    background: rgba(130, 188, 0, 0.3);
     z-index: 1000201;
   }
 
@@ -12,8 +24,10 @@
     position: fixed;
     border-radius: 10px 10px 0 0;
     bottom: 0px;
-    right: 36%;
-    background: #ed1b2d;
+    right: 1%;
+    transition: background 0.5s;
+    transition: width, 0.5s;
+    background: rgba(0,112,205, 0.3);
     z-index: 1000201;
   }
 
@@ -21,10 +35,13 @@
     position: fixed;
     border-radius: 10px 10px 0 0;
     bottom: 0px;
-    left: 1%;
-    background: #7fba00;
+    right: 1%;
+    transition: background 0.5s;
+    transition: width, 0.5s;
+    background: rgba(237,27,46, 0.3);
     z-index: 1000201;
   }
+
 
   #liveagent_button_online_573410000008mNc {
     color: #fff;
@@ -37,34 +54,34 @@
   }
 
 
-    #liveagent_button_online_573410000008mNm {
-      color: #fff;
-    }
+  #liveagent_button_online_573410000008mNm {
+    color: #fff;
+  }
 
-    #liveagent_button_offline_573410000008mNm {
-      display: none !important;
-      color: transparent;
-      cursor: pointer;
-    }
+  #liveagent_button_offline_573410000008mNm {
+    display: none !important;
+    color: transparent;
+    cursor: pointer;
+  }
 
-    #liveagent_button_online_573410000008mNh {
-      color: #fff;
-    }
+  #liveagent_button_online_573410000008mNh {
+    color: #fff;
+  }
 
-    #liveagent_button_offline_573410000008mNh {
-      display: none !important;
-      color: transparent;
-      cursor: pointer;
-    }
+  #liveagent_button_offline_573410000008mNh {
+    display: none !important;
+    color: transparent;
+    cursor: pointer;
+  }
 
-  .chatPTag{
+  .chatPTag {
     font-size: 13px !important;
     margin: 0 !important;
     padding: 4px 9px 4px 9px;
   }
 
-  @media (max-width: 567px){
-    .chatPTag{
+  @media (max-width: 567px) {
+    .chatPTag {
       font-size: 12px !important;
       margin: 0 !important;
       padding: 2px 10px 2px 10px;
@@ -110,6 +127,17 @@
         liveagent.showWhenOnline('573410000008mNc', document.getElementById('liveagent_button_online_573410000008mNc'));
         liveagent.showWhenOffline('573410000008mNc', document.getElementById('liveagent_button_offline_573410000008mNc'));
       });
+
+      var colorChange = function(){
+        $("#chatIntake").css("background", "#7fba00");
+        $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+        console.log("coleslaw");
+      }
+
+      $(document).ready(function(){
+        console.log("start");
+        setTimeout(colorChange, 5000);
+      })
     </script>
   </apex:page>
 </t:if>
@@ -133,6 +161,17 @@
           liveagent.showWhenOnline('573410000008mNm', document.getElementById('liveagent_button_online_573410000008mNm'));
           liveagent.showWhenOffline('573410000008mNm', document.getElementById('liveagent_button_offline_573410000008mNm'));
         });
+
+        var colorChange = function(){
+          $("#chatIntake").css("background", "#7fba00");
+          $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+          console.log("coleslaw");
+        }
+
+        $(document).ready(function(){
+          console.log("start");
+          setTimeout(colorChange, 5000);
+        })
       </script>
     </apex:page>
   </t:if>
@@ -157,6 +196,17 @@
             liveagent.showWhenOnline('573410000008mNh', document.getElementById('liveagent_button_online_573410000008mNh'));
             liveagent.showWhenOffline('573410000008mNh', document.getElementById('liveagent_button_offline_573410000008mNh'));
           });
+
+          var colorChange = function(){
+            $("#chatIntake").css("background", "#7fba00");
+            $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+            console.log("coleslaw");
+          }
+
+          $(document).ready(function(){
+            console.log("start");
+            setTimeout(colorChange, 5000);
+          })
         </script>
       </apex:page>
     </t:if>
