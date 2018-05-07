@@ -35,6 +35,7 @@
     font-size: 15px !important;
     margin: 0 !important;
     padding: 8px 18px;
+    transition: padding, 1s;
   }
 
   @media (max-width: 567px){
@@ -70,12 +71,17 @@
   var colorChange = function(){
     $("#chatIntake").css("background", "#7fba00");
     $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+    $(".chatPTag").css("padding", "12px 22px");
     console.log("coleslaw");
+  }
+  var swell = function(){
+    $(".chatPTag").css("padding", "8px 19px");
   }
 
   $(document).ready(function(){
     console.log("start");
     setTimeout(colorChange, 5000);
+    setTimeout(swell, 6000);
   })
 </script>
 
