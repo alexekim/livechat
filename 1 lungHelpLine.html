@@ -42,7 +42,7 @@
     .chatPTag{
       font-size: 12px !important;
       margin: 0 !important;
-      padding: 2px 10px 2px 10px;
+      padding: 2px 10px 2px 10px !important;
     }
   }
 </style>
@@ -71,7 +71,7 @@
   var colorChange = function(){
     $("#chatIntake").css("background", "#7fba00");
     $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
-    $(".chatPTag").css("padding", "12px 22px");
+    $(".chatPTag").css("padding", "15px 70px");
     console.log("coleslaw");
   }
   var swell = function(){
@@ -79,10 +79,19 @@
   }
 
   $(document).ready(function(){
-    console.log("start");
-    setTimeout(colorChange, 5000);
-    setTimeout(swell, 6000);
+    if(document.cookie.indexOf("seenChat=true;") == -1 ){
+      console.log("animate livechat because they haven't been here yet or in a while.");
+      document.cookie = "seenChat=true";
+      setTimeout(colorChange, 5000);
+      setTimeout(swell, 6000);
+    } else {
+      console.log("they've been here based on the cookie, so just fix it up real fast");
+      $("#chatIntake").css("background", "#7fba00");
+      $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+      $(".chatPTag").css("padding", "8px 19px");
+    }
   })
+
 </script>
 
 

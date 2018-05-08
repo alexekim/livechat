@@ -1,0 +1,391 @@
+<style>
+  html,
+  body {
+    -webkit-overflow-scrolling: touch !important;
+    overflow: auto !important;
+    height: 100% !important;
+  }
+
+  #footer2015 {
+    padding: 69px 0 90px;
+  }
+
+  #navigator {
+    text-align: center;
+    color: #ffffff;
+    background-color: #ed1b2d;
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    left: 50%;
+    position: fixed;
+    bottom: 0px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .set-height {
+    width: inherit;
+    height: 85px;
+    display: inline-block;
+  }
+
+  .arrow {
+    font-size: 16px;
+    line-height: 17px;
+    color: #3a75c4;
+    text-align: center;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    padding: 5px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+
+  .arrow:hover {
+    color: #ffffff;
+    background-color: #bad80a;
+    cursor: pointer;
+  }
+
+  .fa {
+    display: inline;
+  }
+
+  .arrow .fa-times {
+    color: #3a75c4;
+    padding: 0;
+  }
+
+  #glass {
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  #helpTextDiv {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  #helpText {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+
+  #helpText strong {
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  #helpText span {
+    display: block;
+  }
+
+  #dropdownarea {
+    background-image: url('/images/select-arrow-down.gif');
+    background-repeat;
+    no-repeat;
+    background-position: right center;
+    background-color: #ffffff;
+    background-size: 587px 38px;
+    width: 100%;
+    max-width: 180px;
+    height: 36px;
+    vertical-align: top;
+    margin-left: 15px;
+    padding: 0 0 0 15px;
+    display: inline-block;
+    border: 0 none;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  #dropdown {
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1;
+    color: #555559;
+    background: transparent none repeat scroll 0px 0px;
+    width: 120%;
+    height: 36px;
+    padding-right: 62px;
+    border: 0px none;
+    border-radius: 0px;
+    -webkit-appearance: none;
+  }
+
+  #dropdown::-ms-expand {
+    display: none;
+}
+
+  .bottomPart {
+    background-color: #d1d4d5;
+    border-top: 2px solid #ffffff;
+    padding: 20px 20px 25px;
+    text-align: left;
+    display: none;
+  }
+
+  .copy h5 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 30px;
+    color: #555559;
+    margin: 0 25px 10px;
+  }
+
+  .copy p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #555559;
+    margin: 0 25px;
+  }
+
+  .fixfixed #navigator {
+    position: absolute;
+  }
+
+  @media (max-width: 1120px) {
+    #footer2015 {
+      padding: 69px 0 50px;
+    }
+  }
+
+  @media (max-width: 970px) {
+    #navigator {
+      /*text-align: left;*/
+      max-width: none;
+      left: 0;
+      bottom: 0px;
+      transform: initial;
+    }
+    .arrow {
+      right: 8px;
+    }
+    #glass {
+      /*margin-left: 5%; margin-right: 10px;*/
+    }
+    #dropdownarea {
+      max-width: 160px;
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #navigator {
+      text-align: left;
+    }
+    .set-height {
+      height: 70px;
+    }
+    #glass {
+      display: none;
+    }
+    #glass img {
+      height: 64px;
+    }
+    #helpTextDiv {
+      width: 50%;
+      width: calc(100% - 250px);
+      width: -webkit-calc(100% - 250px);
+      width: -moz-calc(100% - 250px);
+      margin-left: 12px;
+    }
+    #helpText {
+      line-height: 21px;
+    }
+    #helpText span {
+      display: none;
+    }
+    #dropdownarea {
+      max-width: 150px;
+    }
+  }
+
+  @media (max-width: 567px) {
+    .set-height {
+      height: 50px;
+    }
+    .arrow {
+      font-size: 14px;
+      line-height: 15px;
+      width: 18px;
+      height: 18px;
+      padding: 2px;
+      top: 5px;
+    }
+    #glass {
+      display: none;
+    }
+    #helpTextDiv {
+      width: 50%;
+      width: calc(100% - 195px);
+      width: -webkit-calc(100% - 195px);
+      width: -moz-calc(100% - 195px);
+      margin-left: 10px;
+    }
+    #helpText {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    #helpText strong {
+      font-size: 13px;
+    }
+    #dropdownarea {
+      max-width: 100px;
+      height: 32px;
+    }
+    #dropdown {
+      height: 32px;
+      padding-right: 0px;
+    }
+    .bottomPart {
+      padding: 10px 10px 12px;
+    }
+    .copy h5 {
+      line-height: 20px;
+      margin: 0 15px 5px;
+    }
+    .copy p {
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0 15px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    #helpTextDiv {
+      width: 50%;
+      width: calc(100% - 150px);
+      width: -webkit-calc(100% - 150px);
+      width: -moz-calc(100% - 150px);
+      margin-left: 8px;
+    }
+    #helpText {
+      line-height: 14px;
+    }
+    #helpText strong {
+      font-size: 12px;
+    }
+    #dropdownarea {
+      max-width: 80px;
+      height: 30px;
+      margin-left: 5px;
+      padding: 0 0 0 10px
+    }
+    #dropdown {
+      height: 30px;
+    }
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    #dropdown {
+      width: 60%;
+    }
+  }
+</style>
+
+<footer id="navigator" class="fixed">
+  <div class="arrow"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+  <div class="set-height">
+    <div id="glass"><img src="/preview!www.lung.org/images/lung-cancer/lc-navigator-mag.png" alt="Can we help you find information on lung cancer?" /></div>
+    <!-- default, but will disappear on media query -->
+    <div id="helpTextDiv">
+      <p id="helpText"><strong>Can we help you find information on lung&nbsp;cancer?</strong><span>Start by selecting which best describes&nbsp;you.</span></p>
+    </div>
+    <!-- end default, but will disappear on media query -->
+
+    <div id="dropdownarea">
+      <select id="dropdown" name="">
+        <option value="">I am . . .</option>
+        <option value="1"> concerned about lung cancer</option>
+        <option value="2"> newly diagnosed</option>
+        <option value="5"> in treatment</option>
+        <option value="3"> finished with my treatment</option>
+        <option value="4"> a caregiver</option>
+      </select>
+    </div>
+  </div>
+  <div class="bottomPart">
+    <div class="copy">
+      <h5>Welcome to the Lung Cancer Navigator. Every lung cancer patient needs a guide. Let us be yours.</h5>
+      <p>Use this tool to help guide you and your loved ones through your lung cancer journey. Start by selecting the pathway that best describes you to find personalized information and resources.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  //show or hide the navigator based on if they have visited before
+  if (document.cookie.indexOf("visitedLungCancer=true;") == -1) {
+    //first time visitor!
+    $(".bottomPart").show("9000");
+    $(".arrow").html('<i class="fa fa-times" aria-hidden="true"></i>');
+    // console.log("user has never visited, so cookie doesn't exist. show navigator onload.");
+    // console.log("cookie did not exist, now being set.");
+    document.cookie = "visitedLungCancer=true;path=/";
+    // console.log("cookie set complete. cookie is 'visitedLungCancer=true;'");
+  } else {
+    // visited before!
+    // console.log("user HAS visited. cookie exists. navigator remains closed.");
+    $(".arrow").html('<i class="fa fa-chevron-up" aria-hidden="true"></i>');
+  }
+
+  var checkArrow = function() {
+    // if <div class="bottomPart" style="display:none">
+    if ($(".bottomPart")[0].style.display == "none") {
+      $(".arrow").html('<i class="fa fa-chevron-up" aria-hidden="true"></i>');
+    } else {
+      $(".arrow").html('<i class="fa fa-chevron-down" aria-hidden="true"></i>');
+    }
+  };
+
+  // NAVIGATOR ARROW POSITION ON CLICK
+  $(".arrow").on("click", function() {
+    $(".bottomPart").slideToggle("fast");
+    setTimeout(checkArrow, 300);
+  });
+
+  $("#dropdown").on("change", function() {
+    if ($(this).val() == "1") {
+      // console.log("concerned chosen");
+      window.location = "http://www.lung.org/lung-health-and-diseases/lung-disease-lookup/lung-cancer/navigator/concernedpathway/index.html";
+    } else if ($(this).val() == "2") {
+      // console.log("diagnosed chosen");
+      window.location = "http://www.lung.org/lung-health-and-diseases/lung-disease-lookup/lung-cancer/navigator/diagnosedpathway/index.html";
+    } else if ($(this).val() == "3") {
+      // console.log("finished chosen");
+      window.location = "http://www.lung.org/lung-health-and-diseases/lung-disease-lookup/lung-cancer/navigator/finishedpathway/index.html";
+    } else if ($(this).val() == "4") {
+      // console.log("caregiver chosen");
+      window.location = "http://www.lung.org/lung-health-and-diseases/lung-disease-lookup/lung-cancer/navigator/caregiverpathway/index.html";
+    } else if($(this).val() == "5") {
+      window.location = "http://www.lung.org/lung-health-and-diseases/lung-disease-lookup/lung-cancer/navigator/treatmentpathway/index.html";
+    }
+    else {
+      // console.log("nothing chosen");
+    }
+  });
+</script>
