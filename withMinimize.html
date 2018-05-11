@@ -16,11 +16,12 @@
     right: 1%;
     transition: background 0.5s;
     transition: width, 0.5s;
-    background: rgba(130,188,0,0.3);
     z-index: 1000201;
   }
 
   #liveagent_button_online_573410000008mNc {
+    border-radius: 10px 10px 0 0;
+    background: rgba(130,188,0,0.3);
     color: #fff;
   }
 
@@ -36,6 +37,24 @@
     margin: 0 !important;
     padding: 8px 18px;
     transition: padding, 1s;
+    text-align: center;
+  }
+  .note{
+    display: none;
+    background: #00a5db;
+    color: #fff;
+    font-size: 12px !important;
+    line-height: 23px !important;
+    border-top: 1px solid #fff;
+    margin-bottom: 0 !important;
+    padding: 10px;
+    z-index: 22;
+  }
+  #exOut{
+    position: absolute;
+    right: 7px;
+    top: 42px;
+    font-size: 15px;
   }
 
   @media (max-width: 567px){
@@ -52,6 +71,11 @@
   <div id="liveagent_button_online_573410000008mNc" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNc')">
     <p class="chatPTag">
       <i class="fa fa-comments"></i>
+    </p>
+    <p class="note">
+      <span id="exOut"  onmouseover="$(this).parent().fadeOut('slow');">x</span>
+      Have questions about lung disease?<br/>
+      Chat with a professional.
     </p>
   </div>
   <div id="liveagent_button_offline_573410000008mNc" style="display: none !important; border: 0px none;">
@@ -72,6 +96,7 @@
     $("#chatIntake").css("background", "#7fba00");
     $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
     $(".chatPTag").css("padding", "15px 70px");
+    $(".note").show();
     console.log("coleslaw");
   }
   var swell = function(){
