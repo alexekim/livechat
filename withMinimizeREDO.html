@@ -44,7 +44,7 @@
   }
   .note{
     /*display: none;*/
-    background: #00a5db;
+    background: #7fba00;
     color: #fff;
     font-size: 12px !important;
     line-height: 23px !important;
@@ -113,26 +113,23 @@
     $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
     $(".chatPTag").css("padding", "15px 70px");
   }
+  var showNote = function(){
+    $(".noteDiv").show();
+  }
   var swell = function(){
     $(".chatPTag").css("padding", "8px 19px");
-  }
-
-  var showNote = function(){
-    if (!document.getElementById('liveagent_button_online_573410000008mNc').style.display == "none") {
-      $(".noteDiv").show();
-    }
   }
 
 
   $(document).ready(function(){
     if(document.cookie.indexOf("seenChat=true;") == -1 ){
+      console.log("animate livechat because they haven't been here yet");
       document.cookie = "seenChat=true;";
-      // console.log("animate livechat because they haven't been here yet.");
       setTimeout(colorChange, 5000);
       setTimeout(swell, 6000);
       setTimeout(showNote,7000);
     } else {
-      // console.log("they've been here based on the cookie, so just do the below. however nothing will show if the chat is offline");
+      console.log("they've been here based on the cookie, so just ")
       $("#chatIntake").css("background", "#7fba00");
       $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
       $(".chatPTag").css("padding", "8px 19px");
