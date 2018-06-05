@@ -103,9 +103,9 @@
   }
 
   var showNote = function(){
-    // if (!document.getElementById('liveagent_button_online_573410000008mNc').style.display == "none") {
+    if ($("#liveagent_button_online_573410000008mNc").css("display") == "block") {
       $(".noteDiv").show();
-    // }
+    }
   }
 
   var noteDisappear = function(){
@@ -118,7 +118,7 @@
     window._laq = [];
   }
   window._laq.push(function() {
-    online();
+    liveagent.showWhenOnline('573410000008mNc', document.getElementById('liveagent_button_online_573410000008mNc'));
     liveagent.showWhenOffline('573410000008mNc', document.getElementById('liveagent_button_offline_573410000008mNc'));
   });
 
@@ -130,7 +130,7 @@
       // console.log("animate livechat because they haven't been here yet.");
       setTimeout(colorChange, 5000);
       setTimeout(swell, 6000);
-      // setTimeout(showNote,7000);
+      setTimeout(showNote,7000);
       setTimeout(noteDisappear, 300000);
     } else {
       // console.log("they've been here based on the cookie, so just do the below. however nothing will show if the chat is offline");
