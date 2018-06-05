@@ -1,0 +1,181 @@
+<style media="screen">
+  #chatIntake {
+    position: fixed;
+    border-radius: 10px 10px 0 0;
+    bottom: 0px;
+    right: 1%;
+    transition: background 0.5s;
+    transition: width, 0.5s;
+    z-index: 1000201;
+  }
+
+  #liveagent_button_online_573410000008mNc {
+    border-radius: 10px 10px 0 0;
+    background: rgba(130,188,0,0.3);
+    color: #fff;
+  }
+
+  #liveagent_button_offline_573410000008mNc {
+    display: none !important;
+    color: transparent;
+    cursor: pointer;
+  }
+
+  .chatPTag{
+    font-weight: bold;
+    font-size: 15px !important;
+    margin: 0 !important;
+    padding: 8px 18px;
+    transition: padding, 1s;
+    text-align: center;
+  }
+  .noteDiv{
+    display: none;
+  }
+  .note{
+    /*display: none;*/
+    background: #7fba00;
+    color: #fff;
+    font-size: 12px !important;
+    line-height: 23px !important;
+    border-top: 1px solid #fff;
+    margin-bottom: 0 !important;
+    padding: 10px 31px 10px 10px;
+    z-index: 22;
+  }
+  #exOutLive{
+    position: absolute;
+    right: 7px;
+    top: 45px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  @media (max-width: 567px){
+    .chatPTag{
+      font-size: 12px !important;
+      margin: 0 !important;
+      padding: 2px 10px 2px 10px !important;
+    }
+    #exOutLive{
+      font-size: 24px;
+      top: 30px;
+    }
+  }
+</style>
+
+
+<div id="chatIntake">
+  <div id="liveagent_button_online_573410000008mNc" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNc')">
+    <p class="chatPTag">
+      <i class="fa fa-comments"></i>
+    </p>
+  </div>
+  <div class="noteDiv">
+    <p class="note">
+      <span id="exOutLive"  onclick="$(this).parent().hide('fast');"><i class="fa fa-times-circle"></i></span>
+      Have questions about lung disease?<br/>
+      Chat with a professional.
+    </p>
+  </div>
+  <div id="liveagent_button_offline_573410000008mNc" style="display: none !important; border: 0px none;">
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  if (!window._laq) {
+    window._laq = [];
+  }
+  window._laq.push(function() {
+    liveagent.showWhenOnline('573410000008mNc', document.getElementById('liveagent_button_online_573410000008mNc'));
+    liveagent.showWhenOffline('573410000008mNc', document.getElementById('liveagent_button_offline_573410000008mNc'));
+  });
+
+  var colorChange = function(){
+    $("#chatIntake").css("background", "#7fba00");
+    $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+    $(".chatPTag").css("padding", "15px 70px");
+  }
+  var swell = function(){
+    $(".chatPTag").css("padding", "8px 19px");
+  }
+
+  var showNote = function(){
+    // if (!document.getElementById('liveagent_button_online_573410000008mNc').style.display == "none") {
+      $(".noteDiv").show();
+    // }
+  }
+
+  var noteDisappear = function(){
+    $(".noteDiv").hide();
+  }
+
+
+  $(document).ready(function(){
+    if(document.cookie.indexOf("seenChat=true;") == -1 ){
+      document.cookie = "seenChat=true;";
+      // console.log("animate livechat because they haven't been here yet.");
+      setTimeout(colorChange, 5000);
+      setTimeout(swell, 6000);
+      setTimeout(showNote,7000);
+      setTimeout(noteDisappear, 300000);
+    } else {
+      // console.log("they've been here based on the cookie, so just do the below. however nothing will show if the chat is offline");
+      $("#chatIntake").css("background", "#7fba00");
+      $(".chatPTag").html('Ask a Question <i class="fa fa-comments"></i>');
+      $(".chatPTag").css("padding", "8px 19px");
+    }
+  })
+
+</script>
+
+
+
+
+
+<!-- Intake Chat Button: -->
+
+<!-- <img id="liveagent_button_online_573410000008mNc" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNc')" src="https://americanlungassociation.secure.force.com/resource/1518068145000/Live_Chat_Online"
+/>
+<img id="liveagent_button_offline_573410000008mNc" style="display: none; border: 0px none; " src="https://americanlungassociation.secure.force.com/resource/1518068145000/Live_Chat_Offline" />
+<script type="text/javascript">
+  if (!window._laq) {
+    window._laq = [];
+  }
+  window._laq.push(function() {
+    liveagent.showWhenOnline('573410000008mNc', document.getElementById('liveagent_button_online_573410000008mNc'));
+    liveagent.showWhenOffline('573410000008mNc', document.getElementById('liveagent_button_offline_573410000008mNc'));
+  });
+</script> -->
+
+<!-- Tobacco Chat Button: -->
+
+<img id="liveagent_button_online_573410000008mNm" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNm')" src="https://americanlungassociation.secure.force.com/resource/1518068145000/Live_Chat_Online"
+/>
+<img id="liveagent_button_offline_573410000008mNm" style="display: none; border: 0px none; " src="https://americanlungassociation.secure.force.com/resource/1518068145000/Live_Chat_Offline" />
+<script type="text/javascript">
+  if (!window._laq) {
+    window._laq = [];
+  }
+  window._laq.push(function() {
+    liveagent.showWhenOnline('573410000008mNm', document.getElementById('liveagent_button_online_573410000008mNm'));
+    liveagent.showWhenOffline('573410000008mNm', document.getElementById('liveagent_button_offline_573410000008mNm'));
+  });
+</script>
+
+<!-- Medical Chat Button: -->
+
+<img id="liveagent_button_online_573410000008mNh" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNh')" src="https://americanlungassociation.secure.force.com/resource/1518068145000/Live_Chat_Online"
+/>
+<img id="liveagent_button_offline_573410000008mNh" style="display: none; border: 0px none; " src="https://americanlungassociation.secure.force.com/resource/1518068145000/Live_Chat_Offline" />
+<script type="text/javascript">
+  if (!window._laq) {
+    window._laq = [];
+  }
+  window._laq.push(function() {
+    liveagent.showWhenOnline('573410000008mNh', document.getElementById('liveagent_button_online_573410000008mNh'));
+    liveagent.showWhenOffline('573410000008mNh', document.getElementById('liveagent_button_offline_573410000008mNh'));
+  });
+</script>
