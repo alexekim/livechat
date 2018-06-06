@@ -9,13 +9,13 @@
     z-index: 1000201;
   }
 
-  #liveagent_button_online_573410000008mNc {
+  #liveagent_button_online_573410000008mNh {
     border-radius: 10px 10px 0 0;
     background: rgba(130,188,0,0.3);
     color: #fff;
   }
 
-  #liveagent_button_offline_573410000008mNc {
+  #liveagent_button_offline_573410000008mNh {
     display: none !important;
     color: transparent;
     cursor: pointer;
@@ -64,10 +64,9 @@
     }
   }
 </style>
-
-
+<!-- Medical Chat Button: -->
 <div id="chatIntake">
-  <div id="liveagent_button_online_573410000008mNc" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNc')">
+  <div id="liveagent_button_online_573410000008mNh" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNh')">
     <p class="chatPTag">
       <i class="fa fa-comments"></i>
     </p>
@@ -79,15 +78,13 @@
       Chat with a professional.
     </p>
   </div>
-  <div id="liveagent_button_offline_573410000008mNc" style="display: none !important; border: 0px none;">
+  <div id="liveagent_button_offline_573410000008mNh" style="display: none !important; border: 0px none;">
   </div>
 </div>
-
-
 <script type="text/javascript">
   var colorChange = function(){
     $("#chatIntake").css("background", "#7fba00");
-    $(".chatPTag").html('Ask a Question (intake lung)<i class="fa fa-comments"></i>');
+    $(".chatPTag").html('Ask a Question (med)<i class="fa fa-comments"></i>');
     $(".chatPTag").css("padding", "15px 70px");
   }
   var swell = function(){
@@ -106,11 +103,9 @@
     window._laq = [];
   }
   window._laq.push(function() {
-    liveagent.showWhenOnline('573410000008mNc', document.getElementById('liveagent_button_online_573410000008mNc'));
-    liveagent.showWhenOffline('573410000008mNc', document.getElementById('liveagent_button_offline_573410000008mNc'));
+    liveagent.showWhenOnline('573410000008mNh', document.getElementById('liveagent_button_online_573410000008mNh'));
+    liveagent.showWhenOffline('573410000008mNh', document.getElementById('liveagent_button_offline_573410000008mNh'));
   });
-
-
 
   $(document).ready(function(){
     if(document.cookie.indexOf("seenChat=true;") == -1 ){
@@ -123,9 +118,8 @@
     } else {
       // console.log("they've been here based on the cookie, so just do the below. however nothing will show if the chat is offline");
       $("#chatIntake").css("background", "#7fba00");
-      $(".chatPTag").html('Ask a Question (intake lung)<i class="fa fa-comments"></i>');
+      $(".chatPTag").html('Ask a Question (med)<i class="fa fa-comments"></i>');
       $(".chatPTag").css("padding", "8px 19px");
     }
   })
-
 </script>
