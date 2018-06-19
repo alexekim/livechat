@@ -21,6 +21,29 @@
 		cursor: pointer;
 	}
 
+	#liveagent_button_online_573410000008mNm {
+		border-radius: 10px 10px 0 0;
+		background: rgba(130,188,0,0.3);
+		color: #fff;
+	}
+
+	#liveagent_button_offline_573410000008mNm {
+		display: none !important;
+		color: transparent;
+	}
+
+	#liveagent_button_online_573410000008mNh {
+		border-radius: 10px 10px 0 0;
+		background: rgba(130,188,0,0.3);
+		color: #fff;
+	}
+
+	#liveagent_button_offline_573410000008mNh {
+		display: none !important;
+		color: transparent;
+		cursor: pointer;
+	}
+
 	.chatPTag {
 		font-weight: bold;
 		font-size: 15px !important;
@@ -68,9 +91,29 @@
 	}
 </style>
 
+<t:set id="chat_type" value="'0'" />
+<t:if test="issue_topic != null">
+	<t:list id="issue_topic">
+		<t:if test="toLowerCase(name) == 'lung-health-and-diseases'">
+			<t:set id="chat_type" value="'1'" />
+		</t:if>
+		<t:else>
+			<t:if test="toLowerCase(name) == 'tobacco'">
+				<t:set id="chat_type" value="'2'" />
+			</t:if>
+			<t:else>
+				<t:set id="chat_type" value="'0'" />
+			</t:else>
+		</t:else>
+	</t:list>
+</t:if>
+<t:else>
+	<t:set id="chat_type" value="'0'" />
+</t:else>
+
 <t:if test="chat_type == '1'">
 	<apex:page>
-		<!-- Medical Chat Button: -->
+		<!-- lungheathdisease Chat Button: -->
 		<div id="chatIntake">
 			<div id="liveagent_button_online_573410000008mNh" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573410000008mNh')">
 				<p class="chatPTag">
